@@ -1,16 +1,70 @@
-# React + Vite
+# MiniBlog
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+MiniBlog é uma aplicação React construída com Vite para prática de desenvolvimento de blog simples com autenticação Firebase.
 
-Currently, two official plugins are available:
+## O que esta aplicação faz
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Cadastro de usuário com e-mail e senha usando Firebase Authentication
+- Login de usuário com tratamento de erro e feedback visual
+- Navegação entre páginas públicas e privadas com `react-router-dom`
+- Rotas protegidas para criação de posts e área de dashboard
+- Layout básico com `Navbar` e `Footer`
 
-## React Compiler
+## Páginas existentes
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- `/` - Home
+- `/about` - Sobre o projeto
+- `/login` - Formulário de login
+- `/register` - Formulário de cadastro
+- `/posts/create` - Área restrita para criação de posts
+- `/dashboard` - Área restrita do usuário
 
-## Expanding the ESLint configuration
+## Principais tecnologias
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React 19
+- Vite
+- React Router Dom
+- Firebase Authentication
+- Firestore (configurado no projeto)
+- ESLint
+
+## Como rodar localmente
+
+1. Instale as dependências:
+
+```bash
+npm install
+```
+
+2. Inicie o servidor de desenvolvimento:
+
+```bash
+npm run dev
+```
+
+3. Abra o endereço exibido no terminal (normalmente `http://localhost:5173`).
+
+## Scripts úteis
+
+- `npm run dev` - inicia o servidor de desenvolvimento
+- `npm run build` - gera o build de produção
+- `npm run preview` - serve o build de produção localmente
+- `npm run lint` - executa o ESLint no projeto
+
+## Estrutura do projeto
+
+- `src/App.jsx` - configuração de rotas e autenticação global
+- `src/components/Navbar.jsx` - navegação principal
+- `src/components/Footer.jsx` - rodapé do site
+- `src/context/AuthContext.jsx` - contexto de autenticação
+- `src/hooks/useAuthentication.jsx` - lógica de login, cadastro e logout
+- `src/firebase/config.js` - configuração do Firebase
+- `src/pages/` - páginas principais do MiniBlog
+
+## Observações
+
+A aplicação já possui a base de autenticação e rotas protegidas implementadas. As páginas de criação de post e dashboard estão estruturadas como placeholders e podem ser estendidas com recursos de postagem e listagem.
+
+---
+
+
